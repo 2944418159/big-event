@@ -32,12 +32,8 @@ body {
     background: url('/assets/images/login_title.png') no-repeat center;
 }
 
-.layui-btn {
-    width: 100%;
-    background-color: #44afff;
-}
 
-.zhuce {
+.go-login,.go-reg {
     float: right;
 }
 

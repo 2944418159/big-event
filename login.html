@@ -36,7 +36,7 @@
             <!-- 表单 -->
             <form class="layui-form">
                 <div class="layui-form-item">
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名"
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                     <i class="layui-icon layui-icon-username"></i>
                 </div>
@@ -46,10 +46,12 @@
                     <i class="layui-icon layui-icon-password"></i>
                 </div>
 
-                <div class="layui-form-item">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                <div class="layui-form-item ">
+                    <!-- 此处添加一个公共基础类，使按钮的宽度和页面一样宽 并且可以设置颜色 -->
+                    <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">登录</button>
                 </div>
-                <a href="javascript:" class="zhuce">去注册账号</a>
+                <div> <a href="javascript:;" class="go-reg">去注册账号</a></div>
+
 
 
             </form>
@@ -61,25 +63,27 @@
             <!-- 表单 -->
             <form class="layui-form">
                 <div class="layui-form-item">
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名"
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                     <i class="layui-icon layui-icon-username"></i>
                 </div>
                 <div class="layui-form-item">
-                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
-                        autocomplete="off" class="layui-input">
+                    <input type="password" name="password" required id="one" lay-verify="required|len"
+                        placeholder="请输入密码" autocomplete="off" class="layui-input">
                     <i class="layui-icon layui-icon-password"></i>
                 </div>
                 <div class="layui-form-item">
-                    <input type="password" name="password" required lay-verify="required" placeholder="请再次确认密码"
-                        autocomplete="off" class="layui-input">
+                    <input type="password" required lay-verify="required|same" placeholder="请再次确认密码" autocomplete="off"
+                        class="layui-input">
                     <i class="layui-icon layui-icon-password"></i>
                 </div>
 
                 <div class="layui-form-item">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+                    <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">注册</button>
                 </div>
-                <a href="javascript:" class="zhuce">去登录</a>
+                <div>
+                    <a href="javasprict:;" class="go-login">去登录</a>
+                </div>
 
 
             </form>
