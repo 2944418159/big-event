@@ -19,9 +19,11 @@
     line-height: 30px;
     border-radius: 50%;
     background-color: #009688;
-    position: relative;
-    top: 10px;
+    text-align: center;
     margin-right: 6px;
+    vertical-align: middle;
+    /* 先让文字头像隐藏 */
+    display: none;
 }
 
 

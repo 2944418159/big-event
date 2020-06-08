@@ -1,3 +1,12 @@
+<!-- 在页面还没有开始渲染之前，判断是否有token，就是是否登录 -->
+<script>
+    if (localStorage.getItem('token') == null) {
+        location.href = '/login.html';
+    }
+</script>
+
+
+
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -36,7 +45,10 @@
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href=""> <i class="layui-icon layui-icon-logout"></i>退出</a></li>
+                <li class="layui-nav-item">
+                    <!-- 这步很重要，阻止a链接的跳转 -->
+                    <a href="javascript:;" id="leave"> <i class="layui-icon layui-icon-logout"></i>退出</a>
+                </li>
             </ul>
         </div>
 
@@ -45,7 +57,7 @@
                 <div href="javascript:;" class="welcome">
                     <span class="touxiang"></span>
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    欢迎&nbsp;&nbsp;<span class="hyname">肖肖</span>
+                    欢迎&nbsp;&nbsp;<span class="hyname"></span>
                 </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
