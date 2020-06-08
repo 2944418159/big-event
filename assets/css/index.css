@@ -6,3 +6,29 @@
 .layui-nav-child dd{
     padding-left: 12px;
 }
+.welcome {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.touxiang {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #009688;
+    position: relative;
+    top: 10px;
+    margin-right: 6px;
+}
+
+
+
+
+
+
+.layui-footer {
+    text-align: center;
+}

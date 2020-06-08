@@ -25,6 +25,8 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
+                        <!-- 没有更换头像的默认显示头像 -->
+                        <span class="touxiang"></span>
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
                         个人中心
                     </a>
@@ -40,7 +42,11 @@
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
-
+                <div href="javascript:;" class="welcome">
+                    <span class="touxiang"></span>
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    欢迎&nbsp;&nbsp;<span class="hyname">肖肖</span>
+                </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
                     <li class="layui-nav-item layui-this">
@@ -82,7 +88,7 @@
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © layui.com - 底部固定区域
+            © layui.com - 黑马程序员
         </div>
     </div>
     <!-- 加载layui.all.js     和layui.js的差别是all包含了全部的layui模块，layui和很多的小模块加起来相当于all，加载all代码所需时间比较长 -->
