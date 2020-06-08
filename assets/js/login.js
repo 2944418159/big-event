@@ -62,7 +62,7 @@ $(function () {
             url: 'http://www.liulongbin.top:3007/api/login',
             data: $(this).serialize(),
             success: function (res) {
-                // 不管登录成功或者失败，都给一个提示
+                // 不管登录成功或者失败，都给一个提示 弹出框是唯一一个不需要加载的模块
                 layer.msg(res.message);
                 //登录成功，跳转页面,并将token存储到本地
                 if (res.status == 0) {
