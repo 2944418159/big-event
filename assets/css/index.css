@@ -27,10 +27,12 @@
 }
 
 
-
-
-
-
 .layui-footer {
     text-align: center;
+}
+
+
+.layui-body iframe {
+    width: 100%;
+    height: 100%;
 }
