@@ -19,11 +19,16 @@
         <div class="layui-card-header">修改用户信息</div>
         <div class="layui-card-body">
             <!-- 表单区 -->
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" lay-filter="abc">
                 <div class="layui-form-item">
+                    <!-- 设置隐藏域 -->
+                    <input type="hidden" name="id">
+                </div>
+                <div class="layui-form-item">
+                    <!-- 设置登录名称不可修改 -->
                     <label class="layui-form-label">登录名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名称"
+                        <input type="text" name="username" disabled required lay-verify="required" placeholder="请输入用户名称"
                             autocomplete="off" class="layui-input oldPwd">
                     </div>
                 </div>
