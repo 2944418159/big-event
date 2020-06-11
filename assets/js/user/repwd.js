@@ -27,7 +27,7 @@ $(function () {
         $.ajax({
             type: 'post',
             // 接口以my开头，所以需要设置响应头
-            url: 'http://www.liulongbin.top:3007/my/updatepwd',
+            url: '/my/updatepwd',
             data: $(this).serialize(),
             success: function (res) {
                 //不管是否修改成功，都要给一个提示
@@ -37,16 +37,6 @@ $(function () {
                     $('form')[0].reset();
                 }
             },
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            },
-            complete: function (xhr) {
-                if (xhr.responseJSON.status == 1 && xhr.responseJSON.message === '身份认证失败！') {
-                    localStorage.removeItem('token');
-                    // 如果这样直接跳转的话，页面显示在iframe标签内部，想要让它完全跳转，找当前页面的父级页面
-                    window.parent.location.href = '/login.html'
-                }
-            }
 
         })
     })

@@ -52,7 +52,7 @@ $(function () {
 
         $.ajax({
             type: 'post',
-            url: 'http://www.liulongbin.top:3007/my/update/avatar',
+            url: '/my/update/avatar',
             data: {
                 avatar: dataURL
             },
@@ -63,16 +63,6 @@ $(function () {
                     window.parent.rander();
                 }
             },
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            },
-            complete: function (xhr) {
-                if (xhr.responseJSON.status == 1 && xhr.responseJSON.message === '身份认证失败！') {
-                    localStorage.responseJSON('token');
-                    window.parent.location.href = '/login.html'
-                }
-
-            }
         })
     })
 })

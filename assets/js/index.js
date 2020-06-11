@@ -29,11 +29,9 @@ $(function () {
 function rander() {
     $.ajax({
         // type: 'get',  不写的话默认就是get
-        url: 'http://www.liulongbin.top:3007/my/userinfo',
+        url: '/my/userinfo',
         // jquery中通过headers设置请求头，访问以my开开头的网址需要携带密钥，token，之前在登录页面将token存储在本地存储中
-        headers: {
-            'Authorization': localStorage.getItem('token')
-        },
+
         success: function (res) {
             //登录成功之后将昵称或者用户名显示在欢迎句后面   有昵称先显示昵称，没有昵称显示用户名
             if (res.status == 0) {
@@ -55,14 +53,6 @@ function rander() {
         // complete中接受结果是使用的xhr
         // 如果有人自己创造了一个token，这个时候就需要判断这个token的真假了，根据ajax返回结果判断
         //会出现一闪而过的首页，等待ajax请求完毕之后就会退出登录页面
-        complete: function (xhr) {
-            if (xhr.responseJSON.status == 1) {
-                //删除假的token
-                localStorage.removeItem('token');
-                location.href = '/login.html'
-            }
-
-
-        }
+        // 在公共js中设置了
     })
 }
