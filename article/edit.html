@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 使用裁剪工具，所以要先引入 -->
+    <link rel="stylesheet" href="/assets/lib/cropper/cropper.css">
+    <!-- 引入自己的 -->
+    <link rel="stylesheet" href="/assets/css/article/publish.css">
+
+
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 加载模板 -->
+    <script src="/assets/lib/template-web.js"></script>
+    <!-- 加载富文本插件 -->
+    <script src="/assets/lib/tinymce/tinymce.min.js"></script>
+    <script src="/assets/lib/tinymce/tinymce_setup.js"></script>
+    <!-- 加载剪裁插件是有顺序的，因为剪裁插件是jquery的，所以先加载jquery，在加载剪裁插件，剪裁插件先加载大的js，在加载jquery的剪裁js -->
+    <script src="/assets/lib/cropper/Cropper.js"></script>
+    <script src="/assets/lib/cropper/jquery-cropper.js"></script>
+    <script src="/commit.js"></script>
+    <script src="/assets/js/article/edit.js"></script>
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">编辑文章</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="edit-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章标题</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章类别</label>
+                    <div class="layui-input-block">
+                        <select name="cate_id" lay-verify="required">
+                        </select>
+                    </div>
+                </div>
+                <!-- 文章内容暂时使用文本域替代 -->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">文章内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <!-- 裁剪区域 -->
+
+                <div class="layui-form-item">
+                    <!-- 左侧的 label -->
+                    <label class="layui-form-label">文章封面</label>
+                    <!-- 选择封面区域 -->
+                    <div class="layui-input-block cover-box">
+                        <!-- 左侧裁剪区域 -->
+                        <div class="cover-left">
+                            <img id="image" src="/assets/images/sample2.jpg" alt="" />
+                        </div>
+                        <!-- 右侧预览区域和选择封面区域 -->
+                        <div class="cover-right">
+                            <!-- 预览的区域 -->
+                            <div class="img-preview"></div>
+                            <!-- 选择封面按钮 -->
+                            <input type="file" id="file" style="display: none;">
+                            <button type="button" class="layui-btn layui-btn-danger img-btn">选择封面</button>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <!-- 俩个按钮的作用都是提交 -->
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">发布</button>
+                        <button class="layui-btn layui-btn-primary">存为草稿</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 下拉框的模板 -->
+    <script type="text/template" id="stm">
+        <option value="">请选择文章类别</option>
+        {{each data val}}
+        <option value={{val.Id}}>{{val.name}}</option>
+        {{/each}}
+    </script>
+</body>
+
+</html>
